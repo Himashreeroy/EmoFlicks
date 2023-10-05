@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmoFlicks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>EmoFlicks</h1>
+        <div class="emotions">
+            <button onclick="getRecommendations('Sad')">Sad</button>
+            <button onclick="getRecommendations('Disgust')">Disgust</button>
+            <button onclick="getRecommendations('Anger')">Anger</button>
+            <button onclick="getRecommendations('Surprise')">Surprise</button>
+            <button onclick="getRecommendations('Fear')">Fear</button>
+            <button onclick="getRecommendations('Happy')">Happy</button>
+            <!-- Add more emotion buttons here -->
+        </div>
+        <div class="recommendations">
+            <h2>Movie Recommendations:</h2>
+            <ul id="movie-list"></ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
+
+

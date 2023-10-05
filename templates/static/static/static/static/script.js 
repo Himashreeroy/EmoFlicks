@@ -1,0 +1,24 @@
+function getRecommendations(emotion) {
+    fetch('/recommendations', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            emotion: emotion
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const movieList = document.getElementById('movie-list');
+        movieList.innerHTML = '';
+        data.recommendations.forEach(movie => {
+            const listItem = document.createElement('li');
+            listItem.textContent = movie;
+            movieList.appendChild(listItem);
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
